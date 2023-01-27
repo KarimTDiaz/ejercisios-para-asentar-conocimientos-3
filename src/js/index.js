@@ -1,5 +1,15 @@
 // El styles lo importamos aquí, ya se carga después al compilar todo
 import '../scss/styles.scss';
-import { sayHello } from './demo.js';
+import { setName, setNumbers, setThings } from './print-title.js';
 
-sayHello();
+const buttonsElement = document.getElementById('buttons');
+
+buttonsElement.addEventListener('click', ev => {
+  if (ev.target.dataset.item === 'name') {
+    setName();
+  } else if (ev.target.dataset.item === 'number') {
+    setNumbers();
+  } else if (ev.target.dataset.item === 'thing') {
+    setThings();
+  }
+});
